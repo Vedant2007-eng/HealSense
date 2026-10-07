@@ -1,0 +1,201 @@
+/* ============ HEALSENSE — NEON FUTURISTIC THEME ============ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at 20% 0%, #1a1040 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 100%, #06202e 0%, transparent 50%),
+              #0a0a14;
+  color: #e8eaf6;
+  min-height: 100vh;
+}
+
+#root { max-width: none; padding: 0; text-align: left; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 48px 20px; }
+
+/* ---------- Header ---------- */
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00e5ff, #7c4dff, #ff4081);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(124, 77, 255, 0.4);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #8b93b8;
+  margin-bottom: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ---------- Glass cards ---------- */
+.upload-card, .report {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.upload-card { display: flex; flex-direction: column; gap: 16px; }
+
+h2 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #00e5ff;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+h3 { font-size: 0.95rem; margin: 22px 0 10px; color: #b0b8e0; text-transform: uppercase; letter-spacing: 1.5px; }
+
+label { font-size: 0.8rem; color: #8b93b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ---------- Inputs & buttons ---------- */
+input[type="file"] { color: #8b93b8; font-size: 0.9rem; }
+input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, #7c4dff, #00e5ff);
+  color: #0a0a14; border: none; padding: 8px 16px; border-radius: 8px;
+  font-weight: 700; cursor: pointer; margin-right: 12px;
+}
+
+.pulse-input {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 10px;
+  color: #e8eaf6;
+  font-size: 1rem;
+  width: 220px;
+  transition: all 0.25s;
+}
+.pulse-input::placeholder { color: #565d80; }
+.pulse-input:focus {
+  outline: none;
+  border-color: #00e5ff;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.35);
+}
+
+button {
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+  color: #0a0a14;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.25);
+}
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(124, 77, 255, 0.5);
+}
+button:disabled { background: #2a2f45; color: #565d80; cursor: not-allowed; box-shadow: none; }
+
+/* ---------- Record button ---------- */
+.record-row { display: flex; align-items: center; gap: 14px; }
+
+.record-btn {
+  background: linear-gradient(90deg, #ff1744, #ff4081);
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 24px;
+  box-shadow: 0 0 24px rgba(255, 23, 68, 0.4);
+}
+.record-btn:hover:not(:disabled) { box-shadow: 0 0 40px rgba(255, 23, 68, 0.65); }
+.record-btn.stop { background: linear-gradient(90deg, #565d80, #2a2f45); color: #fff; animation: pulse 1.2s infinite; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.45); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 23, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 23, 68, 0); }
+}
+
+.rec-ok { color: #00e676; font-size: 0.9rem; font-weight: 600; text-shadow: 0 0 12px rgba(0, 230, 118, 0.5); }
+.preview { width: 100%; margin-top: 4px; border-radius: 10px; }
+.divider { text-align: center; color: #565d80; font-size: 0.75rem; margin: 4px 0; letter-spacing: 2px; text-transform: uppercase; }
+
+/* ---------- Error ---------- */
+.error {
+  background: rgba(255, 23, 68, 0.1);
+  border: 1px solid rgba(255, 23, 68, 0.4);
+  color: #ff8a9d;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Report ---------- */
+.header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+
+.badge {
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 20px currentColor;
+}
+
+.transcript {
+  font-style: italic;
+  color: #c3cae8;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #00e5ff;
+  padding: 14px 16px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* ---------- Stat tiles ---------- */
+.stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+
+.stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(124, 77, 255, 0.25);
+  border-radius: 14px;
+  padding: 14px 16px;
+  min-width: 110px;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: all 0.25s;
+}
+.stat:hover {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+}
+.stat .label { font-size: 0.6rem; color: #8b93b8; text-transform: uppercase; letter-spacing: 1.5px; }
+.stat .value { font-weight: 800; color: #fff; font-size: 1.1rem; text-shadow: 0 0 14px rgba(0, 229, 255, 0.35); }
+
+/* ---------- Tags ---------- */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { padding: 5px 14px; border-radius: 16px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+.tag.red { background: rgba(255, 23, 68, 0.18); border: 1px solid #ff1744; color: #ff8a9d; box-shadow: 0 0 12px rgba(255, 23, 68, 0.25); }
+.tag.blue { background: rgba(0, 229, 255, 0.12); border: 1px solid #00e5ff; color: #7defff; box-shadow: 0 0 12px rgba(0, 229, 255, 0.2); }
+.tag.green { background: rgba(0, 230, 118, 0.12); border: 1px solid #00e676; color: #7dffb8; }
+
+/* ---------- Sentences ---------- */
+.sentence {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sentence .pos { color: #00e676; font-weight: 800; font-size: 0.7rem; min-width: 80px; text-shadow: 0 0 10px rgba(0, 230, 118, 0.5); }
+.sentence .neg { color: #ff1744; font-weight: 800; font-size: 0.7rem; min-width: 80px; text-shadow: 0 0 10px rgba(255, 23, 68, 0.5); }
+.sentence .s-text { flex: 1; color: #c3cae8; }
+.sentence .conf { color: #565d80; font-size: 0.8rem; }
